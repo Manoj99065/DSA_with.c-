@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int i;
+   cout<<"Enter the percentage of student marks of studnet = ";
+   cin>>i;
+   if(i>=90)
+   {
+      cout<<"Excellence ++";
+   }
+   else if(i>=80 && i<90)
+   {
+      cout<< "Very Good +";
+   }
+   else if(i>=70 && i<80)
+   {
+      cout<< "very Good";
+   }
+   else if(i>=60 && i<70)
+   {
+      cout<<"Good";
+   }
+   else if(i>=45 && i<60)
+   {
+      cout << "Good -";
+   }
+   else if(i>=33 && i<45)
+   {
+      cout<<"pass , Do Hark work next time";
+   }
+   else
+   {
+      cout<< "fail";
+   }
+}
