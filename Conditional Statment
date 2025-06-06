@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int i;
+   cout<<"Enter the value of i = ";
+   cin>>i;
+   if(i%2==0)
+   {
+      cout<<"Given number is even ";
+
+   }
+   else
+   {
+      cout<<"Give number is odd ";
+   }
+}
