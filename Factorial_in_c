@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int sum (int a)
+{
+   int j=1;
+   for(int i=a;i>=1;i--)
+   {
+      j*=i;
+      // cout<<j;
+   }
+   return j;
+}
+int main()
+{ 
+   int a;
+   cout<<"Enter the number = ";
+   cin>>a;
+   cout<<"Result of given n number factorial = "<<sum (a);
+return 0;
+}
