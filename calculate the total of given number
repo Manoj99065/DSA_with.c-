@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+   int sum(int a)
+   {
+      int sum1=0;
+      while(a!=0)
+      {
+         int j=a%10;
+         sum1=j+sum1;
+         a=a/10;
+         
+
+      }
+      
+   
+   return sum1;
+}
+
+int main()
+{  int a;
+   cout<<"Enter the number = ";
+   cin>>a;
+   cout<<"The sum of given number is = "<<sum(a);
+   return 0;
+}
