@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int factorial(int n){
+      int facto=1;
+    for(int y=n;y>=1;y--)
+      {
+         facto=facto*y;
+      }
+      return facto;
+   }
+
+int bionomial(int n, int r)
+{
+      int y=n;
+      int t=y-r;
+
+      int N=factorial(y);
+      int R=factorial(r);
+      int T=factorial(t);
+   int s=N/(R*(T));
+return s;
+}
+
+int main()
+{
+   int n;
+   cout<<"Enter the value of the number = ";
+   cin>>n;
+   int r;
+   cout<<"Enter the value of the redius = ";
+   cin>>r;
+   cout<<"Result of given bionomial expresion is = "<<bionomial(n,r);
+return 0;
+}
