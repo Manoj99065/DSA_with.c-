@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int prime(int n){
+   int sum=0;
+   for(int i=1;i<=n;i++)
+   {
+      int count=0;
+      for(int j=1;j<=i;j++)
+      {
+         if(i%j==0)
+         {  
+            
+            count=count+1;
+         }
+      }
+         if(count==2)
+         {
+            cout<<"Output of the given prime number is = "<<i<<endl;
+            sum =sum+1;
+         }
+      }
+      return sum;
+   }
+   
+   
+
+int main()
+{
+   
+   int r;
+   cout<<"Enter the value of the redius = ";
+   cin>>r;
+   prime(r);
+   cout<<"\n";
+   cout<<"The total number of prime number = " <<(prime(r));
+   
+return 0;
+}
