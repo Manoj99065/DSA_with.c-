@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int decimal(int x)
+{
+   string X=to_string(x);
+   int power=0;
+   int sum=0;
+   int count;
+   count=X.length();
+   for(int i=count-1;i>=0;i--)
+   {
+    int m=X[i]-'0';
+    cout<<m;
+    sum=sum+pow(2,power) *m;
+    power=power+1;
+   }
+   cout<<"Final anser is = "<<sum;
+
+}
+int main()
+{
+   int i;
+   cout<<"Enter the value of number = ";
+   cin>>i;
+   decimal(i);
+}
