@@ -1,0 +1,63 @@
+#include<iostream>
+#include<sstream>
+#include<string>
+#include<typeinfo>
+
+using namespace std;
+
+int complement(int n)
+{
+int count=0;
+string sum="";
+int mul=1;
+string com="";
+string sum1="";
+while(n!=0 && n>=0)
+{
+   int k=n%2;
+   mul=mul*10+k;
+   n=n/2;
+}
+
+string t=to_string(mul);
+while(mul!=0)
+{
+   mul=mul/10;
+   count=count+1;
+}
+
+for(int i=count;i>=1;i--)
+{
+   char c=t[i];
+   sum=sum+c;
+}
+
+
+
+cout<<"Decimal to binary conversion is = " << sum<<endl;
+for(int i=count-1;i>=1;i--)
+{
+   char c=t[i];
+   if(c=='1')
+   {
+      sum1=sum1+'0';
+   }
+   else
+   {
+      sum1=sum1+'1';
+   }
+
+}
+cout<<"Decimal to binary converter first complement = "<<sum1<<endl;
+
+}
+
+
+int main()
+{
+   int t;
+   cout<<"Enter the value of the decimal number = ";
+   cin>>t;
+   complement(t);
+   return 0;
+}
