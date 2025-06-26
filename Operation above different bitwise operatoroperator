@@ -1,0 +1,20 @@
+#include<iostream>
+
+using namespace std;
+int main()
+{
+   int a=10;
+   int b=6;
+   cout<<(a && b)<<endl;
+   cout<<(a>>1);
+   cout<<(a && b);
+   cout<<(a|b);
+   cout<<(a||b);
+   cout<<(a^b);
+   cout<<(b>>2);
+   cout<<(a<<1);
+   unsigned x=10;
+   cout<<x<<endl;
+
+   return 0;
+}
