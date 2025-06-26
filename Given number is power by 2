@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int power_of_2(int a)
+{ 
+   int n=a;
+
+   while(n>0 && n%2==0)
+   {
+      if(n%2==0)
+      {
+         n=n/2;
+         cout <<n;
+      }
+   }
+   if(n==1){
+      cout<<endl<<"This number is power by 2 ";
+   }
+   else
+   {
+      cout<<endl<<" THis number is not power by 2 ";
+   }
+
+}
+int main()
+{
+int a;
+cout<<"Enter the value of a = ";
+cin>>a;
+power_of_2(a);
+return 0;
+}
