@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int i = 324;
+    int num = 0;
+
+    while (i > 0)
+    {
+        int j = i % 10;
+        num = num * 10 + j;
+        i = i / 10;
+    }
+
+    cout << num << endl;
+
+    return 0;
+}
