@@ -1,0 +1,26 @@
+
+#include<iostream>
+using namespace std;
+  int power(int a)
+  {
+    if(a%2==0)
+    {
+      int s=a>>1;
+      if(s== 8192 || s== 4096 || s== 2048 || s==1024 || s==512 || s==256 || s==128 || s==64 || s==32 || s==16 || s==8 || s==4 ||s==2)
+      {
+      cout<<"s is power by 2 = "<<s*2;
+      // return s;
+      }
+      else
+      {
+        cout<<"S is not power by 2 = "<<s*2;
+      }
+    }
+  }
+  int main()
+  {
+    int i;
+    cout<<"Enter the value of i = ";
+    cin>>i;
+    power(i);
+  }
