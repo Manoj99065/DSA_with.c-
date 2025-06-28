@@ -1,0 +1,49 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+class manoj
+{
+   public:
+   int arr(int a)
+   {
+      int *s=new int [a];
+      for(int i=0;i<a;i++)
+      {
+         cin>>s[i];
+
+      }
+   // In this section we are display arr.
+   for(int i=0;i<a;i++)
+   {
+      cout<<s[i];
+      if(i!=a-1)
+      {
+         cout<<",";
+      }
+   }
+
+   long long int t=99999999999999999;
+   for(int i=0;i<a;i++)
+   {
+       if(t>s[i])
+       {
+         t=s[i];
+       }
+   }
+   cout<<endl<<"The samllest element is = " << t;
+
+   delete[] s;
+   }
+};
+int main()
+{  
+   int a;
+   cout<<"Enter the value of a = ";
+   cin>>a;
+   manoj a1;
+   a1.arr(a);
+   return 0;
+   
+   
+}
