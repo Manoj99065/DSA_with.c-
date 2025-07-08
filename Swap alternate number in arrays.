@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+  int arr[]={43,546,345,635,2345,33,};
+  int k;
+  int size=sizeof(arr)/sizeof(arr[0]);
+  // cout<<size;
+  for(int i=0;i <= size; i=i+2)
+  {
+  cout<<i<<endl;
+  {
+  int temp;
+  temp=arr[i];
+  arr[i]=arr[i+1];
+  arr[i+1]=temp;
+   }
+  }
+  for(int j=0;j<size;j++ )
+  {
+    cout<<arr[j];
+    if(j!=size-1)
+    {
+      cout<<",";
+    }
+  }
+  return 0;
+}
+
