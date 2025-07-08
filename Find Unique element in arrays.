@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class Manoj 
+{
+   public:
+    void arra(int arr[],int size)
+
+    {
+      int *arr1=new int [size];
+      int k;
+      int y=0;
+      
+      for(int i=0;i<size;i=i+1)
+      {  
+         int count=0;
+         k=arr[i];
+         for(int j=0;j<size;j=j+1)
+         {
+          if(k==arr[j])
+          {
+            // cout<<arr[j]<<"o"<<endl;
+            count=count+1;
+          }
+         }
+         //  cout<<"This "<<count;
+          if(count==1)
+          { 
+            // cout<<arr[i];
+           arr1[y]=arr[i];
+           y++;
+           count=0;
+          }
+         
+      }
+
+      //  in this sectio we are display element from the arrays.
+      for(int i=0;i<y;i++)
+      {
+         cout<<arr1[i];
+         if(i!=y-1)
+         {
+            cout<<",";
+         }
+      }
+    }
+};
+
+//  This is main sectin here so here we are add another and external elemenet.
+int main()
+{
+   Manoj m1;
+   int arr[]={230,43,23,534,13,32,442,230,230,12,13,12,43,23,32};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   // cout<<"size of arrs "<<size<<endl;
+   m1.arra(arr,size);
+   return 0;
+}
