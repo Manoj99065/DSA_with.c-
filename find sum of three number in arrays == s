@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int s=5;
+   int arr[]={1,2,3,4,5,6,-1,4,2};
+   int n=sizeof(arr)/sizeof(arr[0]);
+   // cout<<n;
+   for(int i=0;i<n;i=i+1)
+   {
+   for(int j=i+1;j<n;j=j+1)
+   {
+      for(int k=j+1;k<n;k=k+1)
+      if(arr[i]+arr[j]+arr[k]==s)
+      {
+         if(arr[i]>arr[j] )
+         {
+            if(arr[i]>arr[k])
+            {
+               int temp;
+            temp=arr[i];
+            arr[i]=arr[k];
+            arr[j]=temp; 
+            
+            cout<<arr[i]<<","<<arr[j]<<","<<arr[k]<<endl;
+            break;
+            }
+         if(arr[j]>arr[k])
+           {
+            int temp;
+            temp=arr[j];
+            arr[j]=arr[k];
+            arr[k]=temp;
+            
+            cout<<arr[i]<<","<<arr[j]<<","<<arr[k]<<endl;
+           }
+
+            int temp;
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp; 
+            cout<<arr[i]<<","<<arr[j]<<","<<arr[k]<<endl;
+         }
+         
+      else if(arr[i]>arr[k])
+      {
+       int temp;
+       temp=arr[i];
+       arr[i]=arr[k];
+       arr[k]=temp;
+
+       cout<<arr[i]<<","<<arr[j]<<","<<arr[k]<<endl;
+
+      }
+
+      else if(arr[j]>arr[k])
+      {
+       int temp;
+       temp=arr[j];
+       arr[j]=arr[k];
+       arr[k]=temp;
+
+       cout<<arr[i]<<","<<arr[j]<<","<<arr[k]<<endl;
+      }
+     
+      else
+
+         {
+            cout<<arr[i]<<","<<arr[j]<<","<<arr[k] <<endl;
+         }
+      }
+   }
+   }
+   return 0;
+}
