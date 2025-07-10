@@ -1,0 +1,83 @@
+#include<iostream>
+using namespace std;
+class Manoj
+{
+   public:
+   void arr1(int arr[],int size)
+   {
+      int * arr2=new int[size];
+      int y=0;
+
+      int * arr3=new int[size];
+      int z=0;
+      for(int i=0;i<size;i=i+1)
+      {  int count=0;
+         for(int j=0;j<size;j=j+1)
+         {
+            if(arr[i]==arr[j])
+            {
+               // arr2[y]=arr[i];
+               // y=y+1;
+               count=count+1;
+
+            }
+         }
+         if(count>=2)
+         {
+            arr2[y]=arr[i];
+            y=y+1;
+         }
+      }
+      //  In this section we are put the given element at a particuler location in the arrays.
+      for(int i=0;i<y;i=i+1)
+      {
+         // for(int j=0;j<y;j=j+1)
+         // {
+         int t=arr2[i];
+         bool found =false;
+
+         for(int j=0;j<z;j=j+1)
+         {
+            if(arr3[j]==t)
+            {
+               // cout<<arr[j]<<","<<t<<endl;
+               found=true;
+               break;
+            }
+         }
+         if(!found)
+         {
+            arr3[z]=t;
+            // cout<<"This is a section"<<arr3[z]<<endl;;
+            z++;
+         }
+         }
+      
+   
+
+      // for(int i=0;i<y;i=i+1)
+      // {
+         
+      // }
+      //  in this section we are display dublicate element from the arrays.
+      for(int i=0;i<z;i=i+1)
+      {
+         cout<<arr3[i];
+         if(i!=z-1)
+         {
+            cout<<",";
+         }
+      }
+   }
+
+};
+
+// This is a main section of the program.
+int main()
+{
+   int arr[]={23,123,43,23,546,76,45,4,4,76};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   Manoj a1;
+   a1.arr1(arr,size);
+   return 0;
+}
