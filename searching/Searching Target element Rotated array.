@@ -1,0 +1,101 @@
+#include<iostream>
+using namespace std;
+class Manoj
+{
+   public:
+   void arr1(int arr[],int size,int target)
+   {
+      int mid;
+      int left=0;
+      int right=size-1;
+      int pivot;
+      int t;
+      while(right>left){
+      int mid=left+(right-left)/2;
+      // cout<<mid<<endl;
+      if(arr[mid]<arr[mid-1] && arr[mid]<arr[mid+1] )
+      {
+         cout<<"The peak element in the array is = "<<arr[mid]<<endl;
+       
+         pivot=arr[mid];
+         cout<<mid;
+         t=mid;
+
+         if(pivot< target <=arr[size-1])
+         {
+            int s;
+            int e;
+            s=mid+1;
+            e=size-1;
+            int m;
+            while(s<=e)
+            {  
+               m=s+(e-s)/2;
+               if(arr[m]==target)
+               {
+                  cout<<"Target element is & i am right section (means smaller section ) : "<<arr[m];
+                  break;
+               }
+               else if(target>arr[m])
+               {
+                  s=m+1;
+               }
+               else
+               {
+                  e=m;
+               }
+            }
+         }
+
+         // in this section we are seen on left side.
+         if(arr[0]>= target <= arr[t]);
+         {
+            int s;
+            int e;
+            s=0;
+            e=t;
+            int m;
+            while(s<=e)
+            {  
+               m=s+(e-s)/2;
+               if(arr[m]==target)
+               {
+                  cout<<"Target element is & i am left section (means greater section ) :  "<<arr[m];
+                  break;
+               }
+               else if(target>arr[m])
+               {
+                  s=m+1;
+               }
+               else
+               {
+                  e=m;
+               }
+            }
+         }
+           break;
+      }
+      else if(arr[mid]>= arr[0])
+      {
+
+         left=mid+1;
+      }
+      else{
+         right=mid;
+      }
+         
+         // cout<<right<<endl;
+      }
+}
+};
+
+//  This is the main section here.
+int main()
+{
+   int arr[]={6,7,8,9,10,2,4,6,8,10,10};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   Manoj m1;
+   int target= 6;
+   m1.arr1(arr,size,target);
+   return 0;
+}
