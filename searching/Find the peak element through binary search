@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class Manoj
+{
+   public:
+   void arr1(int arr[],int size)
+   {
+      int mid;
+      int left=0;
+      int right=size-1;
+      
+      while(right>left){
+      int mid=left+(right-left)/2;
+      cout<<mid<<endl;
+      if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1] )
+      {
+         cout<<"The peak element in the array is = "<<arr[mid];
+         break;
+      }
+      else if(arr[mid+1] > arr[mid])
+      {
+         left=mid+1;
+      }
+      else if (arr[mid-1] > arr[mid]){
+         right=mid;
+      }
+   }
+}
+};
+
+//  This is the main section here.
+int main()
+{
+   int arr[]={3,4,5,1};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   Manoj m1;
+   m1.arr1(arr,size);
+   return 0;
+}
