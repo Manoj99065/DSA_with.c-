@@ -1,0 +1,70 @@
+//  find first and last location of given element through binary search.
+#include<iostream>
+using namespace std;
+class Manoj
+{
+   public:
+   void arr1(int arr[],int size,int target)
+   {
+   int left=0;
+   int right=size-1;
+   int mid;
+   int start;
+   int end;
+   bool n=false;
+   // int mid;
+   while(left<=right){
+   // mid=left+(right-left)/2;
+   mid=left+(right-left)/2;
+   // cout<<endl<<"This is mid : "<<mid<<endl;
+   if(arr[mid]==target)
+   {
+      // cout<<"The target element is : " << arr[mid]<<endl;
+      // return ;
+      n=true;
+      start=mid;
+      end=mid;
+      while(arr[start-1]==target)
+      {
+         start=start-1;
+         // return start;
+      }
+      while(arr[end+1]==target && end+1 <=size-1 )
+      {
+         // cout<<end;
+         end=end+1;
+        
+         // return end;
+      }
+
+      cout<<start<<" : "<<arr[start]<<endl;
+      cout<<end<<" : "<<arr[end]<<endl;
+      break;
+   }
+   else if(target > arr[mid])
+   {
+      left=mid+1;
+   }
+   else
+   {
+      right=mid-1;
+   }
+   }
+   // return -1;
+   if(!n)
+   {
+      cout<<"Element is not present here so : -1";
+   }
+}
+};
+
+// This is main section in the program.
+int main()
+{
+   int arr[]={12,42,44,66,75,81,92,100,100,100,100,330,330};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   int target=330;
+   Manoj m1;
+   m1.arr1(arr,size,target);
+   return 0;
+}
