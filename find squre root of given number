@@ -1,0 +1,62 @@
+// in this sectoin we are find the squre root of given element with the help of binary search.
+#include<iostream>
+using namespace std;
+class Manoj
+{
+ public:
+ int arr1(int element)
+ {
+   // int *arr=new int [element];
+   int start=0;
+   int ans;
+   int end=element;
+
+    int mid=start+(end-start)/2;
+   while(start<=end)
+   {
+   int  squre=mid*mid; 
+    if(squre==element)
+    {
+      return mid; 
+    }
+    if(squre<element)
+    {
+     ans=mid;
+     start=mid+1;
+    }
+    else{
+      end=mid-1;
+    }
+    mid=start+(end-start)/2;
+   }
+return ans;
+ }
+
+
+double floatsection(int n,int stop, int element)
+{  
+   double k=n;
+   double factor=1;
+   {
+      for( int i=0;i<stop;i=i+1)
+      {
+         factor=factor/10;
+         for(double j=k;j*j<element;j=j+factor)
+         {
+            k=j;
+         }
+      }
+   }
+   return k;
+}
+};
+// This is a main section so.
+int main()
+{
+   int element=24;
+   Manoj m1;
+   int temp;
+   temp=m1.arr1(element);
+   cout<<"Squre root of : "<<element<<" is : "<<m1.floatsection(temp,4,element);
+   return 0;
+}
