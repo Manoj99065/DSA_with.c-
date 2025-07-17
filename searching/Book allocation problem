@@ -1,0 +1,97 @@
+#include<iostream>
+using namespace std;
+class Manoj
+{
+   public:
+
+
+
+   // this section is imp for any person.
+   int array(int arr[], int size,int sum)
+   {
+   int *arr1=new int[size];
+   long long int k=9999999999999999;
+   int l=0;
+      int start=0;
+      int end=sum;
+      int mid=start+(end-start)/2;
+      while(start<end)
+      {
+         int a=0;
+         int b=0;
+         int t=0;
+         for(int i=0;i<size;i=i+1)
+         {
+            t=t+arr[i];
+            if(mid > t )
+            {
+               a=t;
+            }
+            else
+            {
+               b=b+arr[i];
+               if(b>mid)
+               {
+                 start=mid+1;
+               }
+            }
+         }
+         cout<<endl<<" a : "<<a;
+         cout<<" b : "<< b<<endl;
+
+
+
+            if(a<mid && b < mid)
+            {
+               cout<< endl <<" : i am a "<<a<<": i am b : "<<b<<endl;
+               end=mid-1;
+
+            // cout<<"condition is sucessful ";
+
+               if(a>b)
+               {
+                  arr1[l]=a;
+                  l=l+1;
+                  cout<<endl<<"this is a section of a : "<<a<<endl;
+               }
+               else
+               {
+                  arr1[l]=b;
+                  l=l+1;
+                  cout<<endl<<"This is a section of b : "<<b<<endl;
+               }
+         }
+         cout<<endl<<"Start : >> "<< start << ": end >> "<<end<<endl;
+         mid=start+(end-start)/2;
+      }
+      //  in this section we are  wach arrays.
+
+for(int i=0;i<l;i++)
+      {
+         // cout<<" This is array"<<arr1[i];
+       if(arr1[i]<k)
+       {
+         k=arr1[i];
+       } 
+      }
+      cout<<endl<<"Smallest element is according maximum size of book : = "<< k;
+}
+// return arr1;
+};
+
+//  This is main section of the arrays.
+int main()
+{
+   int arr[]={10,20,30,40};
+   int sum=0;
+   int size=sizeof(arr)/sizeof(arr[0]);
+   // cout<<size;
+   for(int i=0;i<size;i++)
+   {
+     sum=sum+arr[i];
+   }
+   // cout<<sum<<endl;
+   Manoj m1;
+   m1.array(arr,size,sum);
+   return 0;
+}
