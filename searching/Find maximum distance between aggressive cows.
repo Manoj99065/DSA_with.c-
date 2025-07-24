@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class Manoj
+{
+   public:
+
+   int arrays(int arr[],int size)
+   {
+      int min=0;
+      int max=0;
+      int ans=-1;
+      for(int i=0;i<size;i++)
+      {
+         if(arr[i]>max)
+         {
+            max=arr[i];
+         }
+      }
+      int mid=min+(max-min)/2;
+      while(min<=max)
+      {
+         for(int i=min+1;i<max;i++)
+         {
+            int k=min;
+            // cout<<k;
+            if(i-k >= mid)
+            {
+             min=mid+1;
+            }
+         }
+         // cout<< "min"<<min<<"Max"<<max;
+         mid=min+(max-min)/2;
+         // min=mid+1;
+         ans=mid;
+         break;
+      }
+      cout<<"Final answer is : "<<ans<<endl;
+   }
+};
+int main()
+{
+   int arr[]={4,2,1,3,6};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   // cout<<size;
+   Manoj m1;
+   m1.arrays(arr,size);
+   return 0;
+}
