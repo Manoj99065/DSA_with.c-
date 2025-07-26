@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class Manoj
+{
+public:
+  int arrays(int arr[],int size)
+  {
+   for(int i=0;i<size;i++)
+   {
+    for(int j=0;j<size-1;j++)
+      {
+        if(arr[j]>arr[j+1])
+        {
+         int temp=arr[j];
+         arr[j]=arr[j+1];
+         arr[j+1]=temp;
+        }
+      }
+    }
+   
+//  In this section we are display the element of sorted arrays.
+   for(int i=0;i<size;i++)
+   {
+      cout<<arr[i];
+      if(i!=size-1)
+      {
+       cout<<",";
+      }
+   }
+  }
+};
+
+
+
+
+ int main()
+   {
+    Manoj m1;
+    int arr[]={14,10,11,13,15,12,9,8};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    m1.arrays(arr,size);
+    return 0;
+   }
