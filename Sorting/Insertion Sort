@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class Manoj
+{
+   public:
+   int arrays(int arr[],int size)
+   {
+      for(int i=1;i<size;i++)
+      {
+         int key=arr[i];
+         int j=i-1;
+         while(j>=0 && arr[j]>key)
+         {
+            arr[j+1]=arr[j];
+            // cout<<endl<<"I am arr[j] section : "<<j+1<<":"<<arr[j+1]<<endl;
+            j=j-1;
+            // cout<<"\n i am j : "<<j<<"\n";
+         }
+         arr[j+1]=key;
+         // cout<<endl<<"I am arr[j+1] section : "<< j+1<< ":"<<arr[j+1]<<endl;
+      }
+   }
+
+   void display(int arr[],int size)
+   {
+    for(int i=0;i<size;i++)
+    {
+      cout<<arr[i];
+      if(i!=size-1)
+      {
+         cout<<",";
+      }
+   }
+}
+};
+// THis is the main section of this arrea.
+int main()
+{
+   int arr[]={10,1000,13,53,245,35,245,5};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   Manoj M1;
+   M1.arrays(arr,size);
+   M1.display(arr,size);
+   return 0;
+}
