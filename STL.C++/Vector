@@ -1,0 +1,70 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class Manoj
+{
+   public:
+   int Vec(vector<int>a)
+   {
+      int s;
+   cout<<a.capacity();
+   a.push_back(10);
+   cout<<endl<<a.capacity();
+   cout<<a.size();
+   cout<<endl<<"The element at"<<a.at(5)<<endl;
+   s=a.back() ;
+   cout<<"Last element : "<< s;
+   cout<<"first element : "<<a.front();
+
+   cout<<"\n pop back :"<<endl;
+   for(int i=0;i<a.size()-1;i++)
+   {
+      cout<<a[i];
+      if(i!=a.size()-2)
+      {
+         cout<<",";
+      }
+   }
+   a.pop_back();
+   cout<<"\n after pop ";
+   for(int i=0;i<a.size()-1;i++)
+   {
+      cout<<a[i];
+      if(i!=a.size()-2)
+      {
+         cout<<",";
+      }
+   }
+   cout<<endl<<"Befor clear size : "<<a.size();
+   a.clear();
+   cout<<endl<<"After clear size : "<<a.size();
+   }
+};
+
+// This is a main section in the programming.
+int main()
+{
+   vector<int>a{3,4,53,23,53,24};
+   Manoj m1;
+   m1.Vec(a);
+
+   // here we are do some other operation.
+   cout<<endl;
+   vector<int>t(5,1);
+   for(int i:t)
+   {
+      cout<<i<<",";
+   }
+
+   // here we are do some other operation.
+   cout<<endl;
+   vector<int>last(t);
+   for(int i:last)
+   {
+      cout<<i<<",";
+   }
+   return 0;
+}
+
+
+
