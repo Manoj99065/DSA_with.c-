@@ -1,0 +1,21 @@
+#include<iostream>
+#include<list>
+using namespace std;
+int main()
+{
+   list<int>a;
+   a.push_front(20);
+   for(int i:a)
+   {
+      cout<<i," ";
+   }
+    cout<<"front "<<a.front();
+    a.push_back(10);
+    cout<<"back element "<<a.back();
+    cout<<"erase";
+    a.erase(a.begin());
+    cout<<a.size();
+   
+   return 0;
+
+}
