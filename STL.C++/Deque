@@ -1,0 +1,30 @@
+#include<iostream>
+#include<deque>
+using namespace std;
+int main()
+{
+   deque<int>d;
+   d.push_back(1);
+   // d.push_back(9);
+   // d.push_back(6);
+   d.push_front(2);
+   // d.push_front(5);
+
+   // here we are display element at specific location.
+   cout<<d.at(0);
+   cout<<endl<<d.front();
+   cout<<endl<<d.back();
+   cout<<" empty "<<d.empty();
+   cout<<endl<<"befor deletion ";
+   for(int i:d)
+   {
+         cout<<i;
+   }
+   cout<<endl<<d.size();
+   
+   d.erase(d.begin(),d.begin()+1);
+   cout<<"after deletion "<<d.size();
+
+return 0;
+
+}
