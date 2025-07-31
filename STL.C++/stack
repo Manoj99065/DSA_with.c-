@@ -1,0 +1,15 @@
+#include<iostream>
+#include<queue>
+using namespace std;
+int main()
+{
+   queue<int>e;
+   e.push(30);
+   e.push(50);
+   e.push(60);
+   cout<<e.front();
+   cout<<endl<<e.back();
+   e.pop();
+   cout<<e.size();
+   return 0;
+}
