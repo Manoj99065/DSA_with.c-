@@ -1,0 +1,24 @@
+#include<iostream>
+#include<map>
+using namespace std;
+int main()
+{
+   map<int,string>m;
+   m[1]="rana";
+   m[2]="raja";
+   m[30]="radha";
+   m[10]="ratan";
+   for(auto i:m)
+   {
+      cout<<i.first<<" "<<i.second<<endl;
+      
+   }
+   cout<<m.count(2);
+   m.erase(30);
+   cout<<"after erase ";
+   for(auto i:m)
+   {
+      cout<<i.first<<" "<<i.second<<endl;
+   }
+
+}
