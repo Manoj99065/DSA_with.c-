@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int arr1[]={1,2,3,0,0,0};
+   int arr2[]={2,5,7};
+   int size=sizeof(arr1)/sizeof(arr1[0]);
+   // cout<<size;
+   int size1=sizeof(arr2)/sizeof(arr2[0]);
+
+   int i=0;
+   int j=0;
+   int t=0;
+   int y=0;
+   int n=0;
+   int count=0;
+   while(i <= size && j <= size1)
+   {
+      if(arr1[i]<=arr2[j])
+      {  
+         if(arr1[i]==0 && arr2[j]>arr1[i])
+         {
+         // count=count+1;
+            arr1[n]=arr2[j];
+            i=i+1;
+            j=j+1;
+         }
+         i=i+1;
+         n=n+1;
+      }
+      else
+      {
+         for(int y = size-1; y >= i; y=y-1)
+         {
+          arr1[y]=arr1[y-1];
+          t=y;
+         }
+         n=t;
+         arr1[n]=arr2[j];
+         i=i+1;
+         j=j+1;
+         n=n+1;
+         
+  }
+}
+for(int i=0;i<size;i=i+1)
+{
+   cout<<arr1[i];
+   if(i!=size-1)
+   {
+      cout<<",";
+   }
+}
+return 0;
+}
