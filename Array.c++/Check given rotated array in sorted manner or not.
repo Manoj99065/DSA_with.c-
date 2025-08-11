@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int arr[]={4,5,6,7,1,2,3};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   // cout<<size;
+   long long int im=999999999999999;
+   int place;
+   for(int i=0; i<size;i=i+1 )
+   {
+      if(arr[i]<im)
+      {  
+         place=i;
+         im=arr[i];
+      }
+   }
+   // cout<<place;
+   int left=place-1;
+   int right=place+1;
+      while(arr [left-1]<arr[left]) 
+      {
+         left=left-1;
+      }
+      while(arr [right+1]>arr[right])
+      {
+         right=right+1;
+      }
+      // cout<<right;
+      // cout<<left;
+   if(right==size && left==0)
+   {
+      cout<<"Rotated array in sorted manner "<<endl;
+   }
+   else
+   {
+      cout<<"Rotated array is not in sorted manner";
+   }
+   
+   // cout<<im;
+
+   return 0;
+}
