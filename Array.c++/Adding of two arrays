@@ -1,0 +1,78 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+// #include<algorithum>
+using namespace std;
+class Manoj
+{  
+   public:
+   int arrays(int arr1[],int size1,int arr2[],int size2)
+   {
+      vector<int>v;
+      int m=size1-1;
+      int n=size2-1;
+      int y=0;
+      int carry=0;
+      while(m>=0 && n>=0)
+      {
+         int val1=arr1[m];
+         int val2=arr2[n];
+         int sum=val1+val2+carry;
+         carry=sum/10;
+         sum=sum%10;
+         v.push_back(sum);
+         m=m-1;
+         n=n-1;
+      }
+      
+      // second case.
+      while(m>=0)
+      {
+         int sum=arr1[m]+carry;
+         carry=sum/10;
+         sum=sum%10;
+         v.push_back(sum);
+         m=m-1;
+      }
+
+      // third case.
+      while(n>=0)
+      {
+         int sum=arr2[n]+carry;
+         carry=sum/10;
+         sum=sum%10;
+         v.push_back(sum);
+         n=n-1;
+      }
+
+      // forth case.
+      while(carry>0)
+      {
+         int sum=carry;
+         carry=sum/10;
+         sum=sum%10;
+         v.push_back(sum);
+      }
+      int s=v.size();
+      // cout<<s;
+      
+      
+      reverse(v.begin(),v.end());
+      for(int i=0;i<s;i=i+1)
+      {
+         cout<<v[i]<<" ";
+      }
+   }
+};
+
+//  THis is a main section of the program.
+int main()
+{
+   int arr1[]={2,3,4};
+   int arr2[]={7,8,9};
+   int size1=sizeof(arr1)/sizeof(arr1[0]);
+   int size2=sizeof(arr2)/sizeof(arr2[0]);
+   Manoj m1;
+   m1.arrays(arr1,size1,arr2,size2);
+   return 0;
+}
