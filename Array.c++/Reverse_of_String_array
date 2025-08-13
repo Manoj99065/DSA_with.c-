@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class manoj
+{
+   public:
+   char array(char arr[],int size)
+   {
+      int left=0;
+      int right=size-1;
+      while(left<=right)
+      {
+         swap(arr[left],arr[right]);
+         left=left+1;
+         right--;
+      }
+      
+   }
+};
+
+// This is a main() section in the program.
+int main()
+{
+   char *name=new char();
+   cout<<"Please enter your own name :- ";
+   cin>>name;
+   manoj m1;
+   int len=strlen(name);
+   // cout<<len;
+   m1.array(name,len);
+   cout<<"This is your reverse name :- "<<name;
+   return 0;
+}
