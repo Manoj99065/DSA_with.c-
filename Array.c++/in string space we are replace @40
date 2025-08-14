@@ -1,0 +1,38 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+   char arr[100];
+   cout<<"Enter the string :-";
+   cin.getline(arr,100);
+   // char arr[100]='manoj rana';
+   int size=strlen(arr);
+   // cout<<size;
+   for(int i=0;i<size;i=i+1)
+   {
+
+      if(arr[i]==' ')
+      {
+        if(size+2>=100)
+        {
+         break;
+        }
+         for(int j=size-1;j>=i;j=j-1)
+         {
+            arr[j+2]=arr[j];
+         }
+        
+          arr[i]='@';
+          arr[i+1]='4';
+          arr[i+2]='0';
+         
+         size=size+2;
+         arr[size]='\0';
+         i=i+2;
+        }
+       
+   }
+   cout<<arr;
+   return 0;
+}
