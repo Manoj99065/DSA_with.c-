@@ -1,0 +1,60 @@
+#include<iostream>
+#include<array>
+#include<vector>
+using namespace std;
+int main()
+{
+   int arr[3][3]={{10,20,30},{40,50,60},{70,80,90}};
+   int row=sizeof(arr)/sizeof(arr[0]);
+   int col=sizeof(arr[0])/sizeof(arr[0][0]);
+   vector<int>v;
+   // cout<<row <<col;
+   int count=0;
+   int total=col*row;
+
+   // here declare some column and row position.
+   int startingrow=0;
+   int startingcol=0;
+   int endingrow=row-1;
+   int endingcol=col-1;
+   while(count<total)
+   {
+    for(int index=startingcol;index<=endingcol&&count<total;index=index+1){
+    v.push_back(arr[startingrow][index]);
+    count++;
+   }
+   startingrow++;
+
+   // second loop.
+   for(int index=startingrow;index<=endingrow&&count<total;index++)
+   {
+      v.push_back(arr[index][endingcol]);
+      count=count+1;
+   }
+   endingcol--;
+
+   // third loop;
+   for(int index=endingcol;index>=startingcol&&count<total;index=index-1)
+   {
+            v.push_back(arr[endingrow][index]);
+            count++;
+
+   }
+   endingrow--;
+   
+   //forth loop
+   for(int index=endingrow;index>=startingrow&&count<total;index=index-1)
+   {
+                  v.push_back(arr[index][startingcol]);
+                  count=count+1;
+   }
+   startingcol++;
+}
+// in this section we are display vector.
+int size=v.size();
+for(int i=0;i<size;i++)
+{
+   cout<<v[i]<<" ";
+}
+   return 0;
+}
