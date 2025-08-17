@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int size1=3;
+   int size2=3;
+   int arr[size1][size2]={{23,45,23},{34,245,345},{34,52,234}};
+  
+   for(int j=0;j<size2;j=j+1)
+   {
+
+      if(j%2==0)
+      {
+         for(int i=0;i<size1;i=i+1)
+         {
+            cout<<arr[i][j]<<"  ";
+         }
+         cout<<endl;
+      }
+      else
+      {
+      //  cout<<"hi";
+       for(int i=size1-1;i>=0;i=i-1)
+       {
+         cout<<arr[i][j]<<"  ";
+       }
+       cout<<endl;
+      }
+   }
+   return 0;
+}
