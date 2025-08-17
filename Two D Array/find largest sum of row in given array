@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+
+ bool search(int  arr[][4],int target,int size , int size1)
+      {
+       
+        for(int i=0;i<size;i=i+1)
+        {
+          for(int j=0;j<size1;j=j+1)
+          {
+          if(target==arr[i][j])
+          {
+            return 1;          
+          } 
+         }
+      }
+   return 0;
+   }
+int main()
+{
+   int size=3;
+   const int size1=4;
+   int j=0;
+   int *arr2=new int;
+   int k=0;
+   int arr[size][size1]={{1,2,3,4},{6,7,8,6},{6,5,4,4}};
+   int sum1=0;
+   int target;
+
+   //  in this section we are find sum of a row wise.
+   for(int i=0;i<size;i=i+1)
+   { 
+      int sum=0;
+      for(int j=0;j<size1;j=j+1)
+      {  
+         cout<<arr[i][j];
+         sum=sum+arr[i][j];
+         sum1=sum1+arr[i][j];
+         // arr2[k]=arr[i][j];
+      }
+      cout<< " -> "<<sum;
+         arr2[k++]=sum;
+      cout<<endl;
+   }
+   int t=0;
+   cout<<"sum of all elment is : - "<<sum1<<endl<<endl;;
+   for(int s=0;s<k;s++)
+   {
+      if(arr2[s]>t)
+      {
+        t=arr2[s];
+      }
+   }
+   cout<<"Larget element according row wise :- "<<t;
+   return 1;
+}
