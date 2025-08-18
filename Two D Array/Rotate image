@@ -1,0 +1,64 @@
+#include<iostream>
+#include<array>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+int arr[10][10];
+int i;
+cout<<"Enter the value of i : ";
+cin>>i;
+int j;
+cout<<"Enter the value of j : ";
+cin>>j;
+for(int m=0;m<i;m++)
+{
+   for(int n=0;n<j;n++)
+   {cout<<"Enter element in the array = ";
+      cin>>arr[m][n];
+   }
+}
+//  rotate of element 1st section of this programming.
+for(int m=0;m<i;m++)
+{
+   for(int n=m+1;n<j;n++)
+   {
+    swap(arr[m][n],arr[n][m]);
+   }
+}
+//reverse element rowwise.
+int row=0;
+int col=0;
+while(col<j)
+{
+   int left=row;
+   int right=i-1;
+   while(left<right)
+   {
+     swap(arr[col][left],arr[col][right]);
+     left=left+1;
+     right=right-1;
+   }
+   col=col+1;
+}
+for(int m=0;m<i;m=m+1)
+{
+   for(int n=0;n<j;n++)
+   {
+      cout<<arr[m][n]<<" ";
+   }
+   cout<<endl;
+}
+
+// in this section we are display 2d array rotate 90 degree in right direction.
+// for(int m=0;m<j;m++)
+// {
+//    for(int n=i-1;n>=0;n--)
+//    {
+//       cout<<arr[n][m]<<" ";
+//    }
+//    cout<<endl;
+// }
+return 0;
+}
