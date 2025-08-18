@@ -1,0 +1,40 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{  
+   int size=3;
+   int size1=4;
+   int arr[size][size1]={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+   int left=0;
+   int target;
+   cout<<"Enter element you want to search = ";
+   cin>>target;
+   int right=size*size1-1;
+   // cout<<right;
+   int mid=left+(right+left)/2;
+   int meet=0;
+   // cout<<"midle is "<<mid;
+   while(left<=right)
+   {
+     int element=arr[mid/size1][mid%size1];
+     if(element==target)
+     {
+      cout<<" Element fount "<<element;
+      meet=element;
+      return 0;
+     }
+     else if(element>target)
+     {
+      right=mid-1;
+     }
+     else
+     {
+      left=mid+1;
+     }
+     mid=left+(right-left)/2;
+   }
+   cout<<"element not found";
+   
+   return 0;
+}
