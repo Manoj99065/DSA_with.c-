@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class manoj
+{
+   public:
+   bool prime(int num)
+   {
+      for(int i=2;i<num;i++)
+      {
+         if(num%i==0)
+         {
+            return 0;
+         }
+      }
+      return 1;
+   }
+};
+
+//  THis is a main section in the code where execution of the program is start.
+int main()
+{
+   int i;
+   cout<<"Enter the value of i = ";
+   cin>>i;
+   manoj m1;
+   bool s=m1.prime(i);
+   if(s==1)
+   {
+      cout<<"The given number is prime";
+   }
+   else
+   {
+      cout<<"The given number is not prime";
+   }
+return 0;
+}
