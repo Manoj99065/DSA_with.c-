@@ -1,0 +1,41 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class manoj
+{
+   public:
+   // vector<int> HCf(vector<int> & arr,int size)
+   void HCF(int i,int j)
+   {
+      int small;
+      int greater=0;
+      if(i<j)
+      {
+         small=i;
+      }
+      else
+      {
+         small=j;
+      }
+      for(int k=2;k<=small;k=k+1)
+      {
+         if(i%k==0 && j%k==0)
+         {
+            greater=k;
+         }
+      }
+     
+      cout<<"larget highest command divisor is ="<<greater;
+   }
+
+};
+int main()
+{  int i,j=0;
+   cout<<"Enter the value of number 1 = ";
+   cin>>i;
+   cout<<"Enter the value of number 2 = ";
+   cin>>j;
+   manoj m1;
+   m1.HCF(i,j);
+   return 0;
+}
