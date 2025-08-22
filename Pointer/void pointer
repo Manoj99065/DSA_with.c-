@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   string j="manoj";
+   int i=40;
+   void *ptr;
+   ptr=&j;
+   cout<<*(static_cast<int*>(ptr));
+   return 0;
+}
