@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+int update(int *p,int n)
+{int sum=0;
+   for(int i=0;i<n;i++)
+   {
+      cout<<p[i]<<endl;
+      sum=p[i]+sum;
+   }
+//   *p=*p+5;
+  return sum;
+
+}
+int main()
+{
+   // char j="manoj";
+   string *k;
+   // int i=40;
+   // int *t;
+   // int*ptr=&i;
+   // cout<<*ptr;
+   // (*ptr)++;
+   // int *p=ptr;
+   // cout<<p<<" - "<<ptr;
+   // cout<<endl<<*p <<" - "<<*ptr;
+   // cout<<endl<<sizeof(t);
+   // cout<<" - "<<sizeof(k);
+   // cout<<*(static_cast<int*>(ptr));
+
+   // wild pointer.
+   // int * ptr;
+   // int *ptr1=NULL;
+   // int *ptr2=getpointer();
+   // // cout<<*ptr2;
+   // int **c=&ptr2;
+   // cout<<**c;
+
+   // deglling pointer.
+
+   // this is section for array.
+
+   // cout<<"this is a wild pointer/";
+   // int arr[10]={23,4,245,245,245};
+   // int *i=&arr[0];
+   // cout<<*i;
+   // cout<<*arr;
+   // int j=4;
+   // cout<<*(arr+1);
+   // cout<<j(*arr);
+   // cout<<arr[j];
+   // cout<<j+arr[1];
+   // int *ptr=&arr;
+   // cout<<sizeof(*arr)<<endl;
+   // cout<<sizeof(&arr)<<endl;
+   // cout<<sizeof(arr)<<endl;
+   // int * ptr=&arr[0];
+   // cout<<sizeof(&ptr);
+
+   // // int arr1[5]={103,49,0234,2039,345};
+   // char arr3[6]="abcde";
+   // // cout<<arr1;
+   // cout<<arr3;
+   // char *t=&arr3[0];
+   // cout<<t;
+   // char  temp1='z';
+   // char *y=&temp1;
+   // cout<<*y;
+   int value[8]={1,2,3,4,56,6,7,8};
+   // int *p=&value;
+   // cout<< "befor value of v is = "<<*p;
+   cout<<update(value+3,4);
+   // cout<<"After value of v is = "<<*p;
+
+   return 0;
+}
