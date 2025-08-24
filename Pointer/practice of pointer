@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+void increament(int **p)
+{
+   **p=**p+1;
+}
+int main()
+{
+   // int i=5;
+   // int *j=&i;
+   // int **k=&j;
+   // // cout<<**k;
+   // int ***l=&k;
+   // cout<<***l;
+
+   // int a=8;
+   // int b=18;
+   // int *c=&b;
+   // *c=9;
+   // cout<<a<<b;
+
+   // int first=0;
+   // int *p=&first;
+   // int *q=p;
+   // (*q)++;
+   // cout<<first;
+   // // post increament after that another value is increament.
+   // int y=9;
+   // int *z=&y;
+   // cout<<++(*z)<<" ";
+   // y=*z;
+   // cout<<y;
+   // int *t=0;
+   // int first=10;
+   // // cout<<first;
+   // t=first;
+   // cout<<*t;
+
+   // float p=12.4;
+   // float q=34.2;
+   // float *ptr=&p;
+   // (*ptr)++;
+   // *ptr=q;
+   // cout<<*ptr <<" "<<p <<" "<<q;
+   // int arr[7]={12,42,53};
+   // int *a;
+   // cout<<sizeof(arr)<<" "<<sizeof(*a);
+   // cout<<*(arr)<<" "<<*(arr+1)<<" "<<(*arr+1);
+
+   int a=101;
+   int *q=&a;
+
+   // int **p=&q;
+   // int *k=*p;
+   increament(&q);
+   cout<<a;
+   return 0;
+
+}
