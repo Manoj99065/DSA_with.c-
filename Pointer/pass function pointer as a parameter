@@ -1,0 +1,29 @@
+
+#include<iostream>
+using namespace std;
+
+const int a=10;
+const int b=30;
+
+int multiply()
+{
+   return a*b;
+}
+int multiply1()
+{
+   cout<<a+b;
+}
+void print(int (*functionprint)())
+{
+   cout<<"The answer of this pointer is = "<<functionprint();
+   cout<<endl;
+}
+
+// this is a main section in this program.
+int main()
+{
+   // cout<<mulitply();
+   print(multiply);
+   print(multiply1);
+   return 0;
+}
