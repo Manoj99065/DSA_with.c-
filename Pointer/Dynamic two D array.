@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   int i;
+   int j;
+   cout<<"Enter the size of row ";
+   cin>>i;
+   cout<<"Enter the size of col ";
+   cin>>j;
+   int **arr=new int*[i];
+   for(int m=0;m< i;m=m+1)
+   {
+     arr[m] =new int [j];
+   }
+
+   for(int m=0;m<i;m=m+1)
+   {  
+      for(int n=0;n<j;n=n+1)
+      {
+         cin>>arr[m][n];
+      }
+   }
+   
+   //  in this section we are delete the element of the arrays.
+   for(int m=0;m<i;m=m+1)
+   {
+      for(int n=0;n<j;n=n+1)
+      {
+         cout<<" "<<arr[m][n]<<" ";
+      }
+      cout<<endl;
+   }
+   for(int m=0;m<i;m++)
+   {
+      delete []arr[m];
+   }
+   delete[]arr;
+   return 0;
+}
