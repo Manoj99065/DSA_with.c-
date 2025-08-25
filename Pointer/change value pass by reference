@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+void ref(int &k)
+{
+   k=25;
+}
+int main()
+
+
+{
+   int i=5;
+   int &h=i;
+   // cout<<h;
+   int *t;
+   *t=h;
+   // cout<<t;
+   h=20;
+
+   ref(h);
+   
+   cout<<i;
+   return 0;
+}
