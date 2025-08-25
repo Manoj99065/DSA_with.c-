@@ -1,0 +1,20 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+void update(int &j)
+{
+   j=j+1;
+}
+int main()
+{
+   
+   int *a=(int *)malloc(sizeof(int));
+   *a=10;
+   
+   cout<<"Befor value of a = "<<*a;
+   update(*a);
+   cout<<endl;
+   cout<<"after value of a = "<<*a;
+
+   return 0;
+}
