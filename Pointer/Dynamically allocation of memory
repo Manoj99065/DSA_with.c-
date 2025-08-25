@@ -1,0 +1,12 @@
+
+#include<iostream>
+using namespace std;
+int main()
+{
+   char *ch=new char;
+   char t='m';
+   ch=&t;
+   cout<<sizeof(*ch);
+   cout<<endl;
+   cout<<sizeof(ch);
+}
