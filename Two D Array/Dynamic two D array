@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+int main()
+{  int n;
+   cout<<"Enter the element in the array ";
+   cin>>n;
+   int m;
+   cout<<"enter the size of column : ";
+   cin>>m;
+   int **arr=new int*[n];
+   for(int i=0;i<n;i++)
+   {
+      if(i%2==0)
+      {
+      arr[i]=new int [m];
+      }
+      else
+      {
+      arr[i]=new int [m+1];
+      cout<<sizeof(int);
+      }
+   }
+
+   // in this section we are inserte element in jaggard array.
+   for(int i=0;i<n;i++)
+   {
+      if(i%2==0)
+      {
+         for(int j=0;j<m;j++)
+            {
+               cout<<"enter element in the position of an arrays = "<<i<<" "<<j <<" = ";
+               cin>>arr[i][j];
+            }
+      }
+      else 
+         {
+         for(int j=0;j<=m;j++)
+            {
+            cout<<"Enter the element in the position of an arrays = "<<i<<" "<<j<<" = ";
+            cin>>arr[i][j];
+            }
+         }
+   }
+
+   //in this section we are display array.
+    for(int i=0;i<n;i++)
+     {
+      if(i%2==0){
+      for(int j=0;j<m;j++)
+      {
+         // cout<<i<<" "<<j;
+         cout<<arr[i][j]<<" ";
+      }
+   }
+      else
+      {
+         for(int j=0;j<m+1;j++)
+      {
+         cout<<arr[i][j]<<" ";
+      }
+   }
+   cout<<endl;
+   }
+   for(int i=0;i<n;i++)
+   {
+      delete []arr[i];
+   }
+   delete[]arr;
+return 0;
+}
