@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int fact(int a)
+{
+   // cout<<a;
+   if(a==0)
+   {
+      return  1;
+   }
+   int smaller=fact(a-1);
+   cout<<a;
+   int bigger=smaller*2;
+   return bigger;
+}
+
+int main()
+{
+   int a;
+   cout<<"Enter the value for power = ";
+   cin>>a;
+   int s=fact(a);
+   cout<<"power is = "<<s;
+   return 0;
+}
