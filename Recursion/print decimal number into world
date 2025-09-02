@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+void display(string arr[],int n)
+{
+  if(n==0)
+  {
+   return ;
+  }
+  int digit=n%10;
+  n=n/10;
+  display(arr,n);
+  cout<<arr[digit]<<" ";
+}
+int main()
+{
+   int n;
+   cout<<"Enter the value of number :- ";
+   cin>>n;
+   string arr[10]={"Zero","one","two","Three","Four","Five","six","saven","Eight","Nine"};
+   display(arr,n);
+}
