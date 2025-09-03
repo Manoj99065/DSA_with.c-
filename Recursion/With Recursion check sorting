@@ -1,0 +1,33 @@
+   #include<iostream>
+   using namespace std;
+   bool chec(int arr[],int size)
+   {
+      int count=count+1;
+      // cout<<size;
+      if(size==1)
+      {
+         
+         return true;
+      }
+      // chec(arr,size-1);
+      if(arr[size-2]>arr[size-1] )
+      {
+      return false;
+      }
+
+   return chec(arr,size-1);
+   }
+
+   int main()
+   {
+      int arr[6]={10,20,30,70,50,60};
+      bool t=chec(arr,6);
+      if(t==true)
+      {
+      cout<<"Array is sorted";
+      }
+      else
+      {
+      cout<<"not sorted";
+      }
+   }
