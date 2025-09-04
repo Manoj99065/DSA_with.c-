@@ -1,0 +1,26 @@
+   #include<iostream>
+   using namespace std;
+   class manoj
+   {
+      public:
+      bool sum(string s,int size)
+      { 
+         if(size==0)
+         {
+            return 1;
+         }
+      cout<<s[size-1];
+      return sum(s,size-1);
+   }
+   };
+
+   // this is a main section of the program.
+   int main()
+   {
+      manoj m1;
+      string s="Manoj Rana";
+      int size=s.length();
+      m1.sum(s,size);
+      return 0;
+   }
+
