@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class manoj
+{
+   public:
+   int sum(int *arr,int size)
+   { 
+   if(size==0)
+    {
+      return 1;
+    }
+   static int sum1=0;
+   sum(arr,size-1);
+   sum1=sum1+arr[size-1];
+   return sum1;
+   }
+};
+
+// this is a main section of the program.
+int main()
+{
+   int arr[]={10,30,40,50};
+   int sum=sizeof(arr)/sizeof(arr[0]);
+   manoj m1;
+
+   int s= m1.sum(arr,sum);
+   cout<<"sum of the array is " <<s;
+   return 0;
+   
+}
