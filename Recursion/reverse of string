@@ -1,0 +1,32 @@
+
+#include<iostream>
+#include<algorithm>
+   using namespace std;
+   class manoj
+   {
+      public:
+      void sum(string &s,int left, int right)
+      {
+         if(left>right)
+         {
+            return ;
+         }
+         swap(s[left],s[right]);
+         cout<<left<<" ";
+      return sum(s,left+1,right-1); 
+   }
+};
+
+   // this is a main section of the program.
+   int main()
+   {
+      manoj m1;
+      string s="Manoj Rana";
+      int size=s.length();
+      // cout<<size;
+      m1.sum(s,0,size-1);
+      cout<<s;
+      return 0;
+   }
+
+
