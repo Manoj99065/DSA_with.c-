@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class manoj
+{
+   public:
+   bool sum(int *arr,int size,int key,int index=0)
+   { 
+      // cout<<size;
+   if(size==0)
+    {
+      return false;
+    }
+   if(arr[size-1]==key)
+   {
+     return true;
+   
+   }
+   cout<<arr[size-1]<<endl;
+   return sum(arr,size-1,key);
+   
+ }
+};
+
+// this is a main section of the program.
+int main()
+{
+   int arr[]={10,30,40,50};
+   int sum=sizeof(arr)/sizeof(arr[0]);
+   manoj m1;
+   int key=50;
+
+   bool s= m1.sum(arr,sum,key);
+   cout<<s;
+   if(s==1)
+   {
+   cout<<"s in array is " <<s;
+   }
+   else
+   {
+      cout<<"s in not int the array";
+   }
+
+   return 0;
+   
+}
