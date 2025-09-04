@@ -1,0 +1,56 @@
+#include<iostream>
+#include<array>
+#include<algorithm>
+// #include<iostream>
+using namespace std;
+class manoj
+{
+   public:
+   int sum(int *arr,int target,int left,int right)
+   { 
+    if(left>right)
+    {
+      return -1;
+    }
+    int mid=left+(right-left)/2;
+    if(arr[mid]==target)
+    {
+      return arr[mid];
+    }
+    else if(arr[mid]<target)
+    {
+      left=mid+1;
+      // return sum(arr,target,mid+1,right);
+    }
+    else
+    {
+      // return sum(arr,target,left,mid-1);
+      right=mid-1;
+    }
+    return sum(arr,target,left,right);
+ }
+
+};
+
+// this is a main section of the program.
+int main()
+{
+   int arr[]={10,30,40,100};
+   int sum=sizeof(arr)/sizeof(arr[0]);
+   manoj m1;
+   int key=50;
+   int left=0;
+   int right=sum-1;
+   int s= m1.sum(arr,key,left,right);
+   if(s==key)
+   {
+   cout<<"Target element is  in array = " <<s;
+   }
+   else
+   {
+      cout<<"Target element is not in array = "<<s;
+   }
+
+   return 0;
+   
+}
