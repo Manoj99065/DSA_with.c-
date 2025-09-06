@@ -1,0 +1,35 @@
+
+#include<iostream>
+#include<algorithm>
+using namespace std;
+bool palindron(string &s,int left ,int right)
+{
+  if(left>=right)
+  {
+   return true;
+  }
+
+  if(s[left]!=s[right])
+  {
+   return false;
+  }
+  return palindron(s,left+1,right-1);
+}
+
+// This is the main section in the program.
+int main()
+{
+  string s="madam";
+  string l=s;
+  int size=s.length();
+  bool t=palindron(s,0,size-1);
+     if(t==true)
+       { 
+         cout<<"THis is a palindron ";
+       }
+      else
+       {
+         cout<<"This is not palidron ";
+       }
+  return 0;
+}
