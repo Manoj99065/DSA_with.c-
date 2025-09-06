@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+   
+   int numerator=21;
+   int denominator=9;
+   double ans=0;
+   int remainder;
+   float qu=1;
+   float count=0;
+   ans=numerator/denominator;
+   remainder=numerator%denominator;
+   if(remainder==0)
+       {
+       cout<<ans;
+       }
+       else{
+       cout<<ans<<".";
+       }
+
+
+      while(remainder!=0 && count<3)
+      {
+       remainder *= 10;
+       int digit = remainder / denominator;
+       cout << digit;
+       remainder = remainder % denominator;
+       count++;
+   }
+   return 0;
+}
