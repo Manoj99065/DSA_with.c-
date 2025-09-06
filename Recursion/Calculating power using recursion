@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+class manoj
+{
+   public:
+   int pow(int a, int b,int size)
+   {
+   //  cout<<size;
+    if(b==0)
+    {
+      return 1;
+    }
+     
+    if(b%2==0)
+        {
+      int half=pow(a,b/2,size-1);
+      
+      return half*half;
+        }
+
+     else
+      {
+      int half=pow(a,b/2,size-1);
+      return a*half*half;
+
+       }
+       cout<<size;
+      }
+};
+
+int main()
+{
+   int j,k;
+   cout<<"Enter the number of given number = ";
+   cin>>j;
+   cout<<"Enter the number for 2 power of given number = ";
+   cin>>k;
+   manoj m1;
+   int ans=m1.pow(j,k,5);
+   cout<<"I am final answer = "<<ans;
+   return 0;
+}
