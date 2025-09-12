@@ -1,0 +1,94 @@
+#include<iostream>
+using namespace std;
+class manoj
+{
+   public:
+   void merge(int arr[],int left, int right,int mid)
+   {
+      // int mid=left+(right-left)/2;
+      
+      int n1=mid-left+1;
+      int n2=right-mid;
+
+      int first[n1],second[n2];
+
+      // here wa are insert elemet in the the array .
+      for(int i=0;i<n1;i++)
+      {
+         first[i]=arr[left+i];
+      }
+
+      // here we are the elment in the second sub temporary array.
+      for(int j=0;j<n2;j++)
+      {
+         second[j]=arr[mid+1+j];
+      }
+
+      // here we are declasre i,j=0 and k=left;
+      int i=0,j=0;
+      int k=left;
+      
+      while(i<n1 && j<n2)
+      {
+         if(first[i] < second[j])
+         {
+            arr[k]=first[i];
+            i++;
+         }
+         else
+         {
+            arr[k]=second[j];
+            j++;
+         }
+         k++;
+      }
+      //  here we are copy the remaing element of the array
+      while(i<n1)
+      {
+         arr[k]=first[i];
+         i++;
+         k++;
+      }
+      while(j<n2)
+      {
+         arr[k]=second[j];
+         j++;
+         k++;
+      }
+   }
+
+   void merge_sort(int arr[],int left ,int right)
+   {
+      if(left>=right)
+      {
+         return;
+      }
+      int mid=left+(right-left)/2;
+      merge_sort(arr,left,mid);
+      merge_sort(arr,mid+1,right);
+      merge(arr,left,right,mid);
+   }
+
+   // this is a display section of the program
+   void display(int arr[],int size)
+   {
+      for(int i=0;i<size;i++)
+      {
+         cout<<arr[i]<<" ";
+      }
+   }
+
+};
+
+//  this is a main section of the program.
+int main()
+{
+   int arr[]={10,40,30,20};
+   int size=sizeof(arr)/sizeof(arr[0]);
+   manoj m1;
+   // cout<<"hi";
+   m1.merge_sort(arr,0,size-1);
+   // cout<<"hi";
+   m1.display(arr,size);
+   return 0;
+}
