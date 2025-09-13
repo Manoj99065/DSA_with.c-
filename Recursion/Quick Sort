@@ -1,0 +1,76 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+class manoj
+{
+   public:
+
+   // here we are call the quick.
+   int quick(vector<int>&arr,int low, int high)
+   {
+      int i=low+1;
+      // cout<<low<<" ";
+      // cout<<high<<" ";
+      int j=high;
+      int pivot=arr[low];
+      
+      // here we are apply some condition.
+      while(i<=j)
+      {
+         while(arr[i]<pivot && i<=high )
+         {
+            i++;
+         }
+         while(arr[j]>pivot && j>=low)
+         {
+            j--;
+         }
+         if(i<=j)
+         {
+            swap(arr[i],arr[j]);
+            // cout<<"hi";
+         }
+      }
+      // here swap first element which is pivot with the arr[j], here j indicate element smaller from the pivot after some process perform.
+      swap(arr[low],arr[j]);
+      return j;
+   }
+   // here we are call a quicksort fucntion to find pivot element its correct position.
+   void quicksort(vector<int>&arr,int low,int high)
+   {
+      // base case of the recursion.
+      if(low>high)
+      {
+         return ;
+      }
+      int mid=quick(arr,low,high);
+      quicksort(arr,low,mid-1);
+      quicksort(arr,mid+1,high);
+   }
+
+   // in this section we are display the element of the quick sort.
+void display(vector<int>a,int size)
+{
+   for(int i=0;i<size;i++)
+   {
+      cout<<a[i]<<" ";
+   }
+   cout<<endl;
+}
+};
+
+
+// this is the main section in the program.
+int main()
+{
+   vector<int>a={40,30,20,1,8,100,80};
+   int size=a.size();
+   manoj m1;
+   cout<<"Element befor sorting = ";
+   m1.display(a,size);
+   cout<<"Element after sorting = ";
+   m1.quicksort(a,0,size-1);
+   m1.display(a,size);
+   return 0;
+}
