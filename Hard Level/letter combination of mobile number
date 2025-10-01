@@ -1,0 +1,56 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    void solve(string digit, string output, int index, vector<string> &answer, string mapping[])
+    {
+        if (index >= digit.length())
+        {
+            answer.push_back(output);
+            return;
+        }
+
+        int number = digit[index] - '0';
+        string value = mapping[number];
+
+        for (int i = 0; i < value.length(); i++)
+        {
+            output.push_back(value[i]);
+            // cout<< output <<"\n";
+            solve(digit, output, index + 1, answer, mapping);
+            // cout<<"hi"<<endl;
+            output.pop_back();
+        }
+    }
+
+    vector<string> letterCombinations(string digits) {
+        vector<string> ans;
+        if (digits.length() == 0)
+        {
+            return ans;
+        }
+
+        int index = 0;
+        string output;
+        string mapping[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        solve(digits, output, index, ans, mapping);
+        return ans;
+    }
+};
+
+int main()
+{
+    string digits = "23";
+    Solution s;
+    vector<string> ans = s.letterCombinations(digits);
+
+    for (auto str : ans)
+    {
+        cout << str << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
