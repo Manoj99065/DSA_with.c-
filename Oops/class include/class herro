@@ -1,0 +1,8 @@
+class herro
+{ 
+string name;
+char a;
+int age;
+};
+
+
