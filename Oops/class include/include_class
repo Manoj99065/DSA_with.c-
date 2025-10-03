@@ -1,0 +1,9 @@
+#include<iostream>
+#include"herro.c++"
+using namespace std;
+int main()
+{
+   herro m1;
+   cout<<"size "<<sizeof(m1);
+   return 0;
+}
