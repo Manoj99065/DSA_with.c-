@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+class manoj
+{
+ int ch2;
+ int ch1;
+ public:
+ int getch2()
+ {
+    return ch2;
+ }
+ void setch2(int h)
+ {
+    ch2=h;
+ }
+
+ int getch1()
+ {
+    return ch1;
+ }
+ void setch1(int h1)
+ {
+    ch1=h1;
+ }
+
+//  char t;
+};
+
+//  this is main section which indicate this is the starting point of the excution of the program.
+int main()
+{
+    manoj m1;
+    m1.setch1(33);
+    m1.setch2(12);
+    cout<<"here size of class"<<m1.getch2()<<" + "<<m1.getch1()<<" = "<<(m1.getch1()+m1.getch2());
+    // <<"+"<<m1.getch2()<< "="<<m1.ch1+m1.getch2()<<endl;
+    return 0;
+}
