@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class manoj{
+   public:
+   virtual   void func()
+   {
+      cout<<"hii i am mnaoj ranan";
+   }
+};
+class rajput:public manoj
+{
+   public:
+   void func()override
+   {
+      cout<<"i am rajput";
+      int a=3,b=10;
+      cout<<a+b;
+   }
+   // void func()override
+   // {
+   //    cout<<endl<<"sum of number ";
+   // }
+};
+
+int main()
+{ manoj * m1;
+  rajput r1;
+  m1=&r1;
+  m1->manoj::func();
+  m1->func();
+  return 0;
+
+}
