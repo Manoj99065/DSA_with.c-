@@ -1,0 +1,23 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+class manoj
+{
+   public:
+   int real, imag;
+   manoj(int r,int i):
+   real(r),imag(i){};
+
+   // here we are overloading actully operator.
+   manoj operator+(const manoj & obj )
+   {
+      return manoj(real+obj.real,imag+obj.imag);
+   }
+};
+int main()
+{
+   manoj m1(20,30),m3(23,40);
+   manoj m2=m1+m3;
+   cout<<m2.real <<"+ i"<<m2.imag<<endl;
+   return 0;
+}
