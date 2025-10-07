@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+class first
+{
+   public:
+   int add(int a, int b)
+   {
+      return a+b;
+   }
+   double add(double a, double b,double c)
+   {
+      return a+b+c;
+   }
+
+};
+// this is  the main section in this program.
+int main()
+{
+   first f;
+   cout<<"sum of two intiger is = " <<f.add(10,20)<<endl;
+   cout<<"sum of three double number = "<<f.add(10.0,20.1,40.03);
+   return 0;
+}
