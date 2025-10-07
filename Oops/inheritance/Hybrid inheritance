@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class single
+{
+   public:
+   string name="manoj";
+   int age;
+   long long roll_no;
+};
+
+class child_class :public single
+{
+ protected:
+ string cast;
+ void display()
+ {
+   cout<<"my cast is "<<cast<<endl;
+ }
+ 
+ public:
+ void getcast()
+ {
+   display();
+ }
+ 
+ void setcast(string c)
+ {
+   this->cast=c;
+ }
+};
+
+
+class child_class_1:public  single 
+{
+    public:
+    char t='t';
+    string name="Manoj Thakur";
+};
+
+// this is main section in the programming.
+int main()
+{
+ child_class_1 c1;
+ child_class c2;
+ cout<<c1.name;
+ c1.age=22;
+ c1.roll_no=230010139015;
+ c2.setcast("rajput");
+ cout<<c1.single::name<<endl;
+ cout<<c1.age<<endl;
+ cout<<c1.roll_no<<endl;
+ c2.getcast();
+ cout<<c2.name;
+ return 0;
+};
