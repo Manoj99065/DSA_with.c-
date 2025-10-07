@@ -1,0 +1,39 @@
+
+#include<iostream>
+using namespace std;
+class manoj
+{
+  public:
+  string name="manoj";
+  int age;
+  int weight;
+
+  int getage()
+  {
+   return this->age;
+  }
+  void setage(int age)
+  {
+   this->age=age;
+  }
+
+};
+class manoj1:public manoj{
+   public:
+   string c;
+};
+
+int main()
+{
+ manoj1 m1;
+ m1.setage(30);
+ 
+ m1.age=23;
+ m1.weight=100;
+ m1.c="brown";
+ cout<<m1.name<<endl;
+ cout<<m1.getage()<<endl;
+ cout<<m1.age<<endl;
+ cout<<m1.weight<<endl;
+ cout<<m1.c;
+}
