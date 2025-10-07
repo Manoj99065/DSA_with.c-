@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+class manoj
+{
+   public:
+   virtual void  draw()=0;
+   virtual double  area()=0;
+};
+
+// here apply some derivedd class.
+
+class manoj1:public manoj{
+   double radius;
+   public:
+   manoj1(double radius)
+   {
+      this->radius=radius;
+   }
+
+
+
+   void draw()override
+   {
+    cout<<"The are of the circle = ";
+   }
+
+   double area()override
+   {
+      return 3.14*radius*radius;
+   }
+};
+int main()
+{
+   manoj *m1;
+   manoj1 m2(20.0);
+   m1=&m2;
+   m1->draw();
+   cout<<m1->area();
+   return 0;
+   
+}
