@@ -1,0 +1,33 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+void printsubset(vector<int>&h,vector<int>&ans,int i)
+
+{
+   // int size=h.size();
+   if(i==h.size())
+   {
+      for(int c:ans)
+      {
+         cout<<c<<" ";
+      }
+      cout<<endl;
+      return ;
+   }
+   // here we are write recursive base case.
+   ans.push_back(h[i]);
+   printsubset(h,ans,i+1);
+
+   // here we are write exclusive base case.
+   ans.pop_back();
+   printsubset(h,ans,i+1);
+}
+
+// here we are apply main function to solve the given question.
+int main()
+{
+   vector<int>h{10,20,40};
+   vector<int>ans;
+   int i=0;
+   printsubset(h,ans,i);
+}
