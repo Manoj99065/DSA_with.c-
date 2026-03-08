@@ -1,0 +1,55 @@
+class Solution {
+public:
+    // void unique(vector<char>&nums,vector<char>&ans,vector<char> & s,vector<char>&output , int i)
+    // {
+    //     if(i==nums.size())
+    //     {
+    //         string k;
+    //         k=k+output[i];
+    //         if(k.size()==nums.size())
+    //         {
+    //         if(find(ans.begin(), ans.end(),k) == ans.end());
+    //         {
+    //          ans.push_back(output);
+    //          return ;
+    //         }
+    //         }
+    //     }
+    //     // here we are make the combination .
+    //     output.push_back(s[i]);
+    //     unique(nums,ans,s,output,i+1);
+
+    //     // here we are not expclude only make combination of three.
+    //     output.pop_back();
+    //     unique(nums,ans,s,output,i+1);
+
+    // }
+    // string findDifferentBinaryString(vector<string>& nums) {
+    //     int n=nums.size();
+    //     vector<char> s={'0','1'};
+    //     vector<char>ans;
+    //     vector<char>output;
+    //     int i=0;
+    //     unique(nums,ans,s,output,i);
+    //     return ans;
+    // }
+
+    string findDifferentBinaryString(vector<string>& nums) {
+        int size=nums.size();
+        string ans="";
+        for(int i=0;i<size;i++)
+        {
+            cout<<nums[i][i];
+            if(nums[i][i]=='1')
+            {
+                ans+='0';
+            }
+            else
+            {
+                ans+='1';
+            }
+        }
+return ans;
+    }
+        
+};
