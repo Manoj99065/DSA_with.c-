@@ -1,0 +1,95 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int sum(vector<int>a )
+{
+    int maxsum=0;
+    int size=a.size();
+    // cout<<size;
+    for(int i=0;i<size;i++)
+    {
+        int sum1=0;
+        for(int j=i;j<size;j++)
+        {
+            sum1+=a[j];
+            if(sum1 > maxsum)
+            {
+                maxsum=sum1;
+            }
+        }
+    }
+    return maxsum ;
+}
+
+
+
+// here we are apply some operation  like here we are apply main operation
+
+int main() {
+// your code goes here
+int n ;
+cin>>n;
+int k;
+cin>>k;
+vector<int>a(n);
+for(int i=0;i<n;i++)
+{ 
+cin>>a[i];
+}
+
+// here we are apply some loop operation.
+
+for(int i=0;i<n;i++)
+{
+    cout<<a[i];
+}
+cout<<"\n";
+int left=0;
+int right=n-1;
+int j=0;
+bool st=true;
+
+while(j<k)
+{
+    int l=INT_MAX;
+    int k=0;
+    for(int i=1;i<n;i++)
+    {
+       if(a[i]<a[k])
+       {
+           swap(a[i],a[k]);
+        k=k+1;
+       }
+    }
+    // if(left<=right)
+    // {
+    
+    // swap(a[left],a[right]);
+    // // cout<<a[left],a[right];
+    // // cout
+    // // cout<<endl;
+    // if(st==true)
+    // {
+    //     right--;
+    //     st=false;
+    // }
+    // else
+    // {
+    //     left++;
+    //     st=true;
+    // }
+    // }
+    j++;
+    
+}
+// for(int i=0;i<n;i++)
+// {
+//     cout<<a[i];
+// }
+
+    // here in this section we are find the maximums sum of the given arrray .
+    int maxsum=sum(a);
+    cout<<"This is result "<<maxsum;
+    return 0;
+// cout<<"rand";
+}
