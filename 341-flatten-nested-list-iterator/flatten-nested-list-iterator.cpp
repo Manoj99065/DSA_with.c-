@@ -70,10 +70,46 @@
 
 
 
+// class NestedIterator {
+// public:
+//     int i=0;
+//     vector<int>ans;
+//     int index=0;
+//     void nestlist(vector<NestedInteger>&nestedList){
+//       for(auto & i:nestedList)
+//       {
+//         if(i.isInteger())
+//         {
+//             ans.push_back(i.getInteger());
+//         }
+//         else
+//         {
+//             nestlist(i.getList());
+//         }
+//       }
+//     }
+//     NestedIterator(vector<NestedInteger> &nestedList) {
+//      nestlist(nestedList);    
+//     }
+    
+//     int next() {
+//         // int ans=ans.at(i);
+//         // i++;
+//         return ans[index++];
+        
+//     }
+    
+//     bool hasNext() {
+//         return ans.size()>index;  
+//     }
+// };
+
+
+
 class NestedIterator {
 public:
-    int i=0;
-    vector<int>ans;
+    // int i=0;
+    deque<int>ans;
     int index=0;
     void nestlist(vector<NestedInteger>&nestedList){
       for(auto & i:nestedList)
@@ -93,13 +129,15 @@ public:
     }
     
     int next() {
-        // int ans=ans.at(i);
-        // i++;
-        return ans[index++];
+       
+        int val=ans.front();
+        ans.pop_front();
+        return val;
         
     }
     
     bool hasNext() {
-        return ans.size()>index;  
+        return !ans.empty();  
     }
 };
+
