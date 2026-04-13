@@ -10,7 +10,6 @@ public:
             {
                 // if(i==0)
                 result=min(result,abs(i-start));
-
             }
         }
             return result;
