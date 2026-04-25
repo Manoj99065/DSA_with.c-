@@ -1,0 +1,186 @@
+#include<bits/stdc++.h>
+using namespace std;
+class node
+{
+   public:
+   int data;
+   node* left;
+   node* right;
+
+   node(int data)
+   {
+      this->data=data;
+      this->left=NULL;
+      this->right=NULL;
+   }
+};
+
+node* insertdata(node *root)
+{
+   int data;
+   cout<<"Enter root value  : ";
+   cin>>data;
+   root=new node(data);
+
+   if(data==-1)
+   {
+      return NULL;
+   }
+
+   cout<<"Enter the value at left side : "<<data<<endl;
+   root->left=insertdata(root->left);
+
+   cout<<"Enter the value at right side : "<<data<<endl;
+   root->right=insertdata(root->right);
+
+   return root;
+
+}
+
+void traverse(node*root)
+{
+   queue<node*>qu;
+   qu.push(root);
+   qu.push(NULL);
+   while(!qu.empty())
+
+   {
+      node* temp=qu.front();
+      qu.pop();
+
+      if(temp==NULL)
+      {
+         cout<<endl;
+         if(!qu.empty())
+         {
+            qu.push(NULL);
+         }
+      }
+      else{
+         cout<<temp->data<<" ";
+         if(temp->left)
+         {
+            qu.push(temp->left);
+         }
+         if(temp->right)
+         {
+            qu.push(temp->right);
+         }
+      }
+
+   }
+}
+
+
+
+// indorder traverse
+void traverse1(node* root)
+{
+   if(root==NULL)
+   {
+      return;
+   }
+
+   traverse1(root->left);
+   cout<<root->data<<" ";
+   traverse1(root->right);
+}
+
+
+void preodered(node* root)
+{
+   if(root==NULL)
+   {
+      return;
+   }
+
+   cout<<root->data<<" ";
+   preodered(root->left);
+   preodered(root->right);
+}
+
+
+
+// here we are display data by using postordered traversal.
+void postordered(node*root)
+{
+   if(root==NULL)
+   {
+      return;
+   }
+   postordered(root->left);
+   postordered(root->right);
+   cout<<root->data<<" ";
+}
+
+
+// insede this buildformalevelordered.
+
+void buildfromlevelordered(node* &root)
+{
+   queue<node*>qu;
+   cout<<"Enter data for root"<<endl;
+   int data;
+   cin>>data;
+   root=new node(data);
+   qu.push(root);
+
+   while(!qu.empty())
+   {
+      node* temp=qu.front();
+      qu.pop();
+
+      cout<<"Enter left node for : "<<temp->data<<endl;
+      int leftData;
+      cin>>leftData;
+      if(leftData!=-1)
+      {
+         temp->left=new node(leftData);
+         qu.push(temp->left);
+      }
+
+      cout<<"Enter right node for :"<<temp-data<<endl;
+      int rightData;
+      cin>>rightData;
+
+      if(rightData !=-1)
+      {
+         temp->right=new node(rightData);
+         qu.push(temp->right);
+      }
+   }
+}
+
+
+
+int main()
+{
+   node* root=NULL;
+   root=insertdata(root);
+   cout<<"Travesal : "<<endl;
+   traverse(root);
+   cout<<endl;
+
+
+   cout<<"inorder traversal : ";
+   traverse1(root);
+   cout<<endl;
+
+
+   cout<<"Preordered traversal ";
+   preodered(root);
+   cout<<endl;
+
+
+   cout<<"Postordered traversal ";
+   postordered(root);
+
+   buildfromlevelordered(root);
+   cout<<endl;
+   cout<<"Travesal : "<<endl;
+   traverse(root);
+   cout<<endl;
+
+
+   return 0;
+}
