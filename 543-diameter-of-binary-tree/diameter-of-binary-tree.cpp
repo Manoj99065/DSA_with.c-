@@ -9,30 +9,59 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+// class Solution {
+//     private:
+//     int height(TreeNode* root)
+//     {
+//         if(root==nullptr)
+//         {
+//             return 0;
+//         }
+//         int left=height(root->left);
+//         int right=height(root->right);
+//         int ans=max(right,left)+1; 
+//         return ans;
+//     }
+// public:
+//     int diameterOfBinaryTree(TreeNode* root) {
+//         if(root==nullptr)
+//         {
+//             return 0;
+//         }
+//         int op1=diameterOfBinaryTree(root->left);
+//         int op2=diameterOfBinaryTree(root->right);
+//         int op3=height(root->left)+height(root->right); 
+//         int ans=max(op1,max(op3,op2));
+//         return ans;   
+        
+//     }
+// };
+
+
 class Solution {
-    private:
-    int height(TreeNode* root)
+    public:
+    pair<int,int>diameterFast(TreeNode* root)
     {
-        if(root==nullptr)
+        if(root==NULL)
         {
-            return 0;
+            pair<int,int>p=make_pair(0,0);
+            return p;
         }
-        int left=height(root->left);
-        int right=height(root->right);
-        int ans=max(right,left)+1; 
+        pair<int, int>left=diameterFast(root->left);
+        pair<int, int>right=diameterFast(root->right);
+
+        int op1=left.first;
+        int op2=right.first;
+        int op3=(left.second+right.second);
+
+        pair<int,int>ans;
+        ans.first=max(op1,max(op2,op3));
+        ans.second=max(left.second,right.second)+1;
         return ans;
     }
-public:
-    int diameterOfBinaryTree(TreeNode* root) {
-        if(root==nullptr)
-        {
-            return 0;
-        }
-        int op1=diameterOfBinaryTree(root->left);
-        int op2=diameterOfBinaryTree(root->right);
-        int op3=height(root->left)+height(root->right); 
-        int ans=max(op1,max(op3,op2));
-        return ans;   
-        
+
+    int diameterOfBinaryTree(TreeNode * root)
+    {
+        return diameterFast(root).first;
     }
 };
