@@ -13,7 +13,7 @@ public:
 
         if(exponent%2==1)
         {
-            result=(result*(base%M)%M);
+            result=(result*(base)%M);
         }
         return result;
     }
@@ -40,8 +40,6 @@ public:
         }
         int d=getmaxdepth(adj,1,-1);
         if(d==0)return 1;
-        return power(2,d-1);
-
-        
+        return power(2,d-1);      
     }
 };
