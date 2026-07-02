@@ -77,14 +77,16 @@ public:
                         result[nr][nc]=result[r][c]+grid[nr][nc];
 
 
-                        if(grid[nr][nc]==0)
-                        {
-                            deq.push_front({nr,nc});
-                        }
-                        else
-                        {
-                            deq.push_back({nr,nc});
-                        }
+                        // if(grid[nr][nc]==0)
+                        // {
+                        //     deq.push_front({nr,nc});
+                        // }
+                        // else
+                        // {
+                        //     deq.push_back({nr,nc});
+                        // }
+                        deq.push_back({nr,nc});
+
                        }
             }
         }
