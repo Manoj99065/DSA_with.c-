@@ -12,10 +12,10 @@
 class Solution {
 public:
     TreeNode* deleteNode(TreeNode* root, int key) {
-        // if(root==NULL)
-        // {
-        //     return NULL;
-        // }
+        if(root==NULL)
+        {
+            return NULL;
+        }
 
         if(root!=NULL)
         {
